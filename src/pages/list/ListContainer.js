@@ -7,6 +7,11 @@ import { Logout } from "./../../components/Logout";
 import { PetsProvider } from "../../providers/refetchProvider";
 
 export const ListContainer = () => {
+  const petStatus = [
+    { key: 1, id: null, name: "All" },
+    { key: 2, id: "AVAILABLE", name: "Available" },
+    { key: 3, id: "CHECKEDOUT", name: "Checked Out" },
+  ];
   const [selectedStatus, setSelectedStatus] = useState(() => null);
 
   const { loading, error, data, refetch } = usePetsQuery(
@@ -30,6 +35,7 @@ export const ListContainer = () => {
         <Form>
           <Form.Row>
             <SelectStatus
+              petStatus={petStatus}
               onSelect={onSelectStatus}
               defaultValue={selectedStatus}
             />

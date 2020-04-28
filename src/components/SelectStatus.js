@@ -1,11 +1,6 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
-export const SelectStatus = ({ defaultValue, onSelect }) => {
-  const petStatus = [
-    { key: 1, id: null, name: "All" },
-    { key: 2, id: "AVAILABLE", name: "Available" },
-    { key: 3, id: "CHECKEDOUT", name: "Checked Out" },
-  ];
+export const SelectStatus = ({ petStatus, defaultValue, onSelect }) => {
   const setSelect = (e) => {
     e.preventDefault();
     let index = e.target.options.selectedIndex;
